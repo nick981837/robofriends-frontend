@@ -1,0 +1,15 @@
+import React, {Component} from 'react';
+
+
+
+
+
+
+render(){
+	if (this.state.hasError){
+		return <h1> Ooooops. That is not good</h1>
+	}
+	return this.props.children
+}
+}
+export default ErrorBoundary;
