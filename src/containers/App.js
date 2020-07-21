@@ -76,6 +76,13 @@ class App extends Component {
             github:this.state.githubInput
             })
         })
+        .then (response =>response.json())
+        .then(json =>{
+        	fetch('https://robofriendserver.herokuapp.com/', {
+   			method: 'get',})
+	        .then(response=> response.json())
+	        .then(user=> this.setState({robots:user}));
+        })
  }
    	
 
