@@ -9,18 +9,17 @@ const CardList = ({robots})=> {
 		name={robots[i].name} 
 		email={robots[i].email} 
 		nation={robots[i].nation}
-        title={robots[i].title}
-        linkedin={robots[i].linkedin}
-        github={robots[i].github}
-        />
+                title={robots[i].title}
+                linkedin={robots[i].linkedin}
+                github={robots[i].github}
+                />
 	);
 
 	})
 	return (
 		<div>
               {cardComponent}
-
-	    </div>
+	        </div>
 
 		);
 }
