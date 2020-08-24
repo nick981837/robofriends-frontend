@@ -17,56 +17,52 @@ class App extends Component {
 	        linkedinInput:'',
 	        githubInput:'',
 	        searchfield:'',
-	        robots: [],
-	        
+	        robots: []    
 		}
 	}
+	
 // Get users data from back-end
 	componentDidMount() {
 	  fetch('https://robofriendserver.herokuapp.com/', {
    			method: 'get',})
 	  .then(response=> response.json())
 	  .then(user=> this.setState({robots:user}))
-
 	  	}      
             
 //Change state by InputBox
-	onSearchChange = (event) => {
+    onSearchChange = (event) => {
     this.setState({searchfield: event.target.value })
-  }
+        }
 	
-
     nameInputChange =(event)=>{
     this.setState({nameInput: event.target.value})
 	}
 
-	emailInputChange =(event)=>{
+    emailInputChange =(event)=>{
     this.setState({emailInput: event.target.value})  
 	}
 
-	nationInputChange =(event)=>{
+    nationInputChange =(event)=>{
     this.setState({nationInput: event.target.value})  
 	}
 
-	titleInputChange =(event)=>{
+    titleInputChange =(event)=>{
     this.setState({titleInput: event.target.value})  
 	}
 
-	linkedinInputChange =(event)=>{
+    linkedinInputChange =(event)=>{
     this.setState({linkedinInput: event.target.value})  
 	}
 
-	githubInputChange =(event)=>{
+    githubInputChange =(event)=>{
     this.setState({githubInput: event.target.value})  
 	}
 
-
 // Update the database and load user's data again
    onButtonSubmit =()=>{
-       
      fetch('https://robofriendserver.herokuapp.com/create',{
-   			method: 'post',
-   			headers: {'Content-Type': 'application/json'},
+   	    method: 'post',
+   	    headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
             name:this.state.nameInput,
             email:this.state.emailInput,
@@ -84,9 +80,6 @@ class App extends Component {
 	        .then(user=> this.setState({robots:user}));
         })
  }
-   	
-
-   	
 
 	render() {
 	    const {robots, searchfield} = this.state;
@@ -96,9 +89,7 @@ class App extends Component {
 		})
 		return !robots.length ?
 		   <h1>Loading</h1>:
-
 	    (
-	    
 	      <div className='tc'>
 	      <h1 className='f1'>RoboFriends</h1>
 	      <InputBox nameInputChange = {this.nameInputChange} 
@@ -110,9 +101,9 @@ class App extends Component {
 	                onButtonSubmit= {this.onButtonSubmit} />
 	      <SearchBox searchChange = {this.onSearchChange}/>
 	      <Scroll>
-          <CardList robots = {filterRobots}/>
-          </Scroll>
-          </div>
+               <CardList robots = {filterRobots}/>
+              </Scroll>
+              </div>
 		);
 }
 }
