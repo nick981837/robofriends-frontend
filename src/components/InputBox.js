@@ -11,16 +11,14 @@ const InputBox=({nameInputChange, emailInputChange,nationInputChange,titleInputC
       <input className='f4 pa2 w-70 center' type='text' placeholder='Enter your name'  onChange={nameInputChange}/>
       <input className='f4 pa2 w-70 center' type='text' placeholder='Enter your nation'  onChange={nationInputChange}/>
       <input className='f4 pa2 w-70 center' type='text' placeholder='Enter your email'   onChange={emailInputChange}/>
-      <input className='f4 pa2 w-70 center' type='text' placeholder='Enter your title(option)'    onChange={titleInputChange}/>
+      <input className='f4 pa2 w-70 center' type='text' placeholder='Enter your title(option)' onChange={titleInputChange}/>
       <input className='f4 pa2 w-70 center' type='text' placeholder='Enter your linkedIn(option)' onChange={linkedinInputChange}/>
       <input className='f4 pa2 w-70 center' type='text' placeholder='Enter your github(option) '  onChange={githubInputChange}/>
-     </div>
+       </div>
       <button className='w-30 grow f4 link ph3 pv2 dib white bg-light-blue'
-              onClick={onButtonSubmit}
-      >Create</button>
+              onClick={onButtonSubmit}>Create</button>
 	
-	</div>
-
+      </div>
 	)
 }
 export default InputBox;
