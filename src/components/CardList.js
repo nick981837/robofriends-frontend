@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from './Card'
+
 //Display all cards
 const CardList = ({robots})=> {
 	const cardComponent = robots.map((user, i )=>{
@@ -14,8 +15,8 @@ const CardList = ({robots})=> {
                 github={robots[i].github}
                 />
 	);
-
 	})
+	
 	return (
 		<div>
               {cardComponent}
