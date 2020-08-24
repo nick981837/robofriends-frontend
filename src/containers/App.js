@@ -21,7 +21,7 @@ class App extends Component {
 	        
 		}
 	}
-
+// Get users data from back-end
 	componentDidMount() {
 	  fetch('https://robofriendserver.herokuapp.com/', {
    			method: 'get',})
@@ -30,7 +30,7 @@ class App extends Component {
 
 	  	}      
             
-
+//Change state by InputBox
 	onSearchChange = (event) => {
     this.setState({searchfield: event.target.value })
   }
@@ -61,7 +61,7 @@ class App extends Component {
 	}
 
 
-
+// Update the database and load user's data again
    onButtonSubmit =()=>{
        
      fetch('https://robofriendserver.herokuapp.com/create',{
@@ -90,6 +90,7 @@ class App extends Component {
 
 	render() {
 	    const {robots, searchfield} = this.state;
+		//Match the robots from SearchBox
 		const filterRobots = robots.filter(robot=>{
 		return robot.name.toLowerCase().includes(searchfield.toLowerCase());
 		})
