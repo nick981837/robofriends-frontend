@@ -11,11 +11,9 @@ const Card = ({name, email,nation, title, linkedin, github})=>{
 	      <p>{title}</p>
 	      <p><a href= {linkedin}>{linkedin}</a></p>
 	      <p><a href= {github}>{github}</a></p>
-	     
 	   </div>
        </div>
-
       );
-
 }
+
 export default Card;
